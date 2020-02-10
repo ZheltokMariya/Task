@@ -27,8 +27,8 @@ public class TaskApplication {
 			String[] array = WorkWithFile.readFromFile().split(",");
 			int length = array.length;
 			CommonResource resource = new CommonResource(numberRepo);
-			UseDataBaseThread thread1 = new UseDataBaseThread("First", resource, array, 0, (length/2)-1);
-			UseDataBaseThread thread2 = new UseDataBaseThread("Second", resource, array, length/2, length-1);
+			UseDataBaseThread thread1 = new UseDataBaseThread(resource, array, 0, (length/2)-1);
+			UseDataBaseThread thread2 = new UseDataBaseThread(resource, array, length/2, length-1);
 			thread1.start();
 			thread2.start();
 		};

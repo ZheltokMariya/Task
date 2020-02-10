@@ -14,7 +14,7 @@ public class CommonResource {
         this.numberRepo = numberRepo;
     }
 
-    public  void addNumbersToDateBase(String info, String[] array, int start, int end){
+    public  void addNumbersToDateBase(String[] array, int start, int end){
         for (int i = start; i < end+1; i++){
                 this.numberRepo.save(new Number(Integer.valueOf(array[i])));
         }

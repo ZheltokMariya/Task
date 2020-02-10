@@ -6,8 +6,8 @@ public class UseDataBaseThread extends Thread {
     private int start;
     private int end;
 
-    public UseDataBaseThread(String name, CommonResource resource, String[] array, int start, int end){
-        super(name);
+    public UseDataBaseThread(CommonResource resource, String[] array, int start, int end){
+        super();
         this.resource = resource;
         this.start = start;
         this.end = end;
@@ -16,6 +16,6 @@ public class UseDataBaseThread extends Thread {
 
     @Override
     public void run(){
-        resource.addNumbersToDateBase(this.getName(), this.array, this.start, this.end);
+        resource.addNumbersToDateBase(this.array, this.start, this.end);
     }
 }
