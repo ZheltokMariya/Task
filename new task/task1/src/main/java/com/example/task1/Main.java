@@ -22,11 +22,11 @@ public class Main {
         int latchSize;
         int lengthOfArray = WorkWithFile.readFromFile().split(",").length;
 
-        if (lengthOfArray % WorkWithDatabase.NUMBER_OF_COLUMNS == 0){
-            latchSize = lengthOfArray / (batchSize*2);
+        if (lengthOfArray % (batchSize*WorkWithDatabase.NUMBER_OF_COLUMNS) == 0){
+            latchSize = lengthOfArray / (batchSize*WorkWithDatabase.NUMBER_OF_COLUMNS);
         }
         else {
-            latchSize = (lengthOfArray / (batchSize*2)) + 1;
+            latchSize = (lengthOfArray / (batchSize*WorkWithDatabase.NUMBER_OF_COLUMNS)) + 1;
         }
 
         CountDownLatch latch = new CountDownLatch(latchSize);
